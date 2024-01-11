@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Metronome</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/play-pause-parts.css">
+    <link rel="stylesheet" href="./css/theme-btn.css">
+    <link rel="stylesheet" href="./css/range-slider.css">
+    <link rel="icon" href="./img/favicon.ico" type="image/x-icon">
+  </head>
+  <body>
+    <header class="header">
+      <h1>Metronome</h1>
+      <div class="theme-btn-container">
+        <button id="theme-btn" class="theme-btn">
+          <span class="moon">
+            <span class="darkside"></span>
+            <span class="star-corona star-corona-1">
+              <span class="star star-1"></span>
+            </span>
+            <span class="star-corona star-corona-2">
+              <span class="star star-2"></span>
+            </span>
+          </span>
+          <span class="corona">
+            <span class="sun"></span>
+          </span>
+          <span id="toggle" class="toggle"></span>
+        </button>
+      </div>
+    </header>
+    <main>
+      <div class="display-container">
+        <h2 class="tempo-display">Tempo = <span id="tempo-speed" class="tempo-speed">100</span> <spn class="bpm">bpm</spn></h2>
+        <div class="metronome-container">
+          <div id="metronome-base" class="metronome-base">
+            <div class="metronome-blade"></div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="controls-conatiner">
+        <button id="play-pause-btn" class="play-pause-btn">
+          <span id="girder-one" class="girder girder__one--play"></span>
+          <span id="girder-two" class="girder girder__two--play"></span>
+          <span id="girder-three" class="girder girder__three--play"></span>
+        </button>
+
+        <div class="slider-container">
+          <button id="tempo-btn-down" class="tempo-btn tempo-btn__down">-</button>
+          <span class="tempo-label tempo-label__min">40</span>
+          <input id="tempo-slider" class="tempo-slider" type="range" min="40" max="218" value="100">
+          <span class="tempo-label tempo-label__max">218</span>
+          <button id="tempo-btn-up" class="tempo-btn tempo-btn__up">+</button>
+        </div>
+        
+      </div> 
+    </main>
+    <footer class="footer">
+      <p class="copyright"><span>&copy;</span> R P M & L C M, Dec 2023</p>
+    </footer>
+	<script src="./js/beat.js"></script>
+	<script src="./js/metronome.js"></script>
+  </body>
+</html>

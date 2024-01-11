@@ -1,0 +1,65 @@
+/* Range slider */
+
+.tempo-slider {
+  cursor: pointer;
+  width: calc(100% - 100px);
+  margin: 0 10px;
+  background: transparent;
+  transition: 0.4s;
+  transform: translateY(15px);
+}
+
+input[type="range"] {
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+input[type="range"]:focus {
+  outline: none;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+  height: 7px;
+  background: var(--temperature);
+  border: 1px solid var(--temperature);
+  border-radius: 3px;
+  transition: 0.4s;
+}
+
+input[type="range"]::-moz-range-track {
+  height: 7px;
+  background: var(--temperature);
+  border: 1px solid var(--temperature);
+  border-radius: 3px;
+  transition: 0.4s;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  appearance: none;
+  -webkit-appearance: none;
+  height: 22px;
+  width: 22px;
+  margin-top: -14px;
+  background: var(--background);
+  border: 1px solid var(--temperature);
+  border-radius: 50% 50% 3px 3px;
+  transition: 0.4s;
+}
+
+input[type="range"]::-webkit-slider-thumb:hover {
+  background: var(--temperature);
+}
+
+input[type="range"]::-moz-range-thumb {
+  height: 22px;
+  width: 22px;
+  margin-top: -10px;
+  background: var(--background);
+  border: 1px solid var(--temperature);
+  border-radius: 50% 50% 3px 3px;
+  transition: 0.4s;
+}
+
+input[type="range"]::-moz-range-thumb:hover {
+  background: var(--temperature);
+}

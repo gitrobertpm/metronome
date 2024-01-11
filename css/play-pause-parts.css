@@ -1,0 +1,66 @@
+/* Play / pause btn styles */
+
+.play-pause-btn {
+  position: relative;
+  cursor: pointer;
+  width: 42px;
+  height: 42px;
+  padding: 0;
+  background: none;;
+  border-radius: 3px;
+  border: 1px solid var(--temperature);
+  transition: 0.4s;
+}
+
+.play-pause-btn:hover {
+  background: var(--temperature);
+}
+
+.play-pause-btn:hover .girder {
+  background: #fff;
+}
+
+.girder {
+  position: absolute;
+  content: '';
+  display: block;
+  width: 3px;
+  height: 25px;
+  background-color: var(--temperature);
+  border-radius: 3px;
+  transition: 0.9s;
+}
+
+.girder__one--play {
+  top: 7px;
+  left: 10px;
+}
+
+.girder__two--play {
+  top: 1px;
+  left: 20px;
+  transform: rotate(-60deg);
+}
+
+.girder__three--play {
+  top: 13px;
+  left: 20px;
+  transform: rotate(60deg);
+}
+
+.girder__one--pause {
+  top: 7px;
+  left: 13px;
+}
+
+.girder__two--pause {
+  top: 7px;
+  left: 23px;
+  transform: rotate(0deg);
+}
+
+.girder__three--pause {
+  top: 7px;
+  left: 23px;
+  transform: rotate(0deg);
+}
