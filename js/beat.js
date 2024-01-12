@@ -3,43 +3,43 @@ const snd = new Audio("data:audio/wav;base64,//uQRAAAAWMSLwUIYAAsYkXgoQwAEaYLWfk
 
 
 // Function to create a WAV buffer with a single bell chime
-function createBellChime(context) {
-  const duration = 0.1; // seconds
-  const frequency = 250; // Hz (A4)
+// function createBellChime(context) {
+//   const duration = 0.1; // seconds
+//   const frequency = 250; // Hz (A4)
 
-  // Create an AudioBuffer with a single channel
-  const buffer = context.createBuffer(1, context.sampleRate * duration, context.sampleRate);
+//   // Create an AudioBuffer with a single channel
+//   const buffer = context.createBuffer(1, context.sampleRate * duration, context.sampleRate);
 
-  // Get the buffer data
-  const data = buffer.getChannelData(0);
+//   // Get the buffer data
+//   const data = buffer.getChannelData(0);
 
-  // Generate a sine wave for the bell chime
-  for (let i = 0; i < data.length; i++) {
-    data[i] = 0.5 * Math.sin(2 * Math.PI * frequency * i / context.sampleRate);
-  }
+//   // Generate a sine wave for the bell chime
+//   for (let i = 0; i < data.length; i++) {
+//     data[i] = 0.5 * Math.sin(2 * Math.PI * frequency * i / context.sampleRate);
+//   }
 
-  console.log('buffer: ', buffer);
-  return buffer;
-}
+//   console.log('buffer: ', buffer);
+//   return buffer;
+// }
 
-// Create an AudioContext
-const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+// // Create an AudioContext
+// const audioContext = new (window.AudioContext || window.webkitAudioContext)();
 
-// Create the bell chime AudioBuffer
-const bellChimeBuffer = createBellChime(audioContext);
+// // Create the bell chime AudioBuffer
+// const bellChimeBuffer = createBellChime(audioContext);
 
-// Create a buffer source node and connect it to the audio context
-const source = audioContext.createBufferSource();
-source.buffer = bellChimeBuffer;
-source.connect(audioContext.destination);
+// // Create a buffer source node and connect it to the audio context
+// const source = audioContext.createBufferSource();
+// source.buffer = bellChimeBuffer;
+// source.connect(audioContext.destination);
 
-// Start playing the bell chime
-source.start();
+// // Start playing the bell chime
+// source.start();
 
-// Convert the AudioBuffer to base64
-const arrayBuffer = bellChimeBuffer.getChannelData(0).buffer;
-console.log('arrayBuffer: ', arrayBuffer);
-// const base64Audio = btoa(String.fromCharCode.apply(null, new Uint8Array(arrayBuffer)));
+// // Convert the AudioBuffer to base64
+// const arrayBuffer = bellChimeBuffer.getChannelData(0).buffer;
+// console.log('arrayBuffer: ', arrayBuffer);
+// // const base64Audio = btoa(String.fromCharCode.apply(null, new Uint8Array(arrayBuffer)));
 
-// // Print the base64-encoded audio data
-// console.log(base64Audio);
+// // // Print the base64-encoded audio data
+// // console.log(base64Audio);
